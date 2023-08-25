@@ -1,0 +1,378 @@
+object FormRelatUsu: TFormRelatUsu
+  Left = 240
+  Height = 450
+  Top = 31
+  Width = 924
+  Caption = 'FormRelatUsu'
+  ClientHeight = 450
+  ClientWidth = 924
+  Color = clNone
+  object RLReportUsu: TRLReport
+    Left = 66
+    Height = 1123
+    Hint = 'CONFIDENTIAL'
+    Top = 0
+    Width = 794
+    Color = 12308967
+    DataSource = FormLobby.DataSourceUsuarios
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    FriendlyName = 'CONFIDENTIAL'
+    PageSetup.PaperSize = fpCustom
+    PageSetup.PaperWidth = 210
+    PageSetup.PaperHeight = 297
+    Transparent = False
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 66
+      Top = 38
+      Width = 718
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      Color = 9417162
+      ParentColor = False
+      Transparent = False
+      object RLSystemInfo2: TRLSystemInfo
+        Left = 605
+        Height = 14
+        Top = 8
+        Width = 33
+        Alignment = taCenter
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        Transparent = False
+      end
+      object RLSystemInfo3: TRLSystemInfo
+        Left = 666
+        Height = 14
+        Top = 8
+        Width = 34
+        Alignment = taCenter
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Info = itHour
+        ParentFont = False
+        Transparent = False
+      end
+      object RLTitleUsu: TRLLabel
+        Left = 189
+        Height = 44
+        Top = 8
+        Width = 342
+        Alignment = taCenter
+        Caption = 'Usuarios/Funcionarios'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -37
+        Font.Name = 'Poor Richard'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
+        Transparent = False
+      end
+    end
+    object RLBand4: TRLBand
+      Left = 38
+      Height = 38
+      Top = 275
+      Width = 718
+      BandType = btSummary
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = True
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      Color = 10852000
+      ParentColor = False
+      Transparent = False
+      object RLDBResult1: TRLDBResult
+        Left = 32
+        Height = 19
+        Top = 11
+        Width = 166
+        Alignment = taCenter
+        DataField = 'Nome_Usuario'
+        DataSource = FormLobby.DataSourceUsuarios
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Poor Richard'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Info = riCount
+        ParentFont = False
+        Text = 'Total Usuarios: '
+        Transparent = False
+      end
+    end
+    object RLBand5: TRLBand
+      Left = 38
+      Height = 38
+      Top = 313
+      Width = 718
+      BandType = btFooter
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = True
+      Borders.DrawRight = False
+      Borders.DrawBottom = False
+      Color = 9417162
+      ParentColor = False
+      Transparent = False
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 312
+        Height = 16
+        Top = 12
+        Width = 95
+        Alignment = taCenter
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Info = itPageNumber
+        ParentFont = False
+        Transparent = False
+      end
+    end
+    object RLGroup1: TRLGroup
+      Left = 38
+      Height = 133
+      Top = 142
+      Width = 718
+      Transparent = False
+      object RLBand3: TRLBand
+        Left = 0
+        Height = 39
+        Top = 38
+        Width = 718
+        Transparent = False
+        object RLDBText1: TRLDBText
+          Left = 54
+          Height = 18
+          Top = 11
+          Width = 82
+          Alignment = taCenter
+          DataField = 'ID_Usuario'
+          DataSource = FormLobby.DataSourceUsuarios
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          Transparent = False
+        end
+        object RLDBText2: TRLDBText
+          Left = 192
+          Height = 18
+          Top = 11
+          Width = 110
+          Alignment = taCenter
+          DataField = 'Nome_Usuario'
+          DataSource = FormLobby.DataSourceUsuarios
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          Transparent = False
+        end
+        object RLDBText3: TRLDBText
+          Left = 382
+          Height = 18
+          Top = 11
+          Width = 108
+          Alignment = taCenter
+          DataField = 'Email_Usuario'
+          DataSource = FormLobby.DataSourceUsuarios
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          Transparent = False
+        end
+        object RLDBText4: TRLDBText
+          Left = 550
+          Height = 18
+          Top = 11
+          Width = 112
+          Alignment = taCenter
+          DataField = 'Senha_Usuario'
+          DataSource = FormLobby.DataSourceUsuarios
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          Transparent = False
+        end
+      end
+      object RLBand7: TRLBand
+        Left = 0
+        Height = 37
+        Top = 77
+        Width = 718
+        BandType = btFooter
+        Transparent = False
+        Visible = False
+      end
+      object RLBand6: TRLBand
+        Left = 0
+        Height = 38
+        Top = 0
+        Width = 718
+        BandType = btTitle
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = True
+        Transparent = False
+        Visible = False
+        object RLDBText5: TRLDBText
+          Left = 441
+          Height = 19
+          Top = 10
+          Width = 178
+          Alignment = taCenter
+          DataSource = FormLobby.DataSourceUsuarios
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Poor Richard'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsItalic]
+          ParentFont = False
+          Text = 'Nivel de Acesso: '
+          Transparent = False
+        end
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Height = 38
+      Top = 104
+      Width = 718
+      BandType = btTitle
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = True
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      Transparent = False
+      object RLId: TRLLabel
+        Left = 83
+        Height = 24
+        Top = 8
+        Width = 26
+        Alignment = taCenter
+        Caption = 'ID'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'Poor Richard'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = False
+      end
+      object RLNome: TRLLabel
+        Left = 220
+        Height = 24
+        Top = 8
+        Width = 56
+        Alignment = taCenter
+        Caption = 'Nome'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'Poor Richard'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = False
+      end
+      object RLEmail: TRLLabel
+        Left = 409
+        Height = 24
+        Top = 8
+        Width = 56
+        Alignment = taCenter
+        Caption = 'Email'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'Poor Richard'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = False
+      end
+      object RLSenha: TRLLabel
+        Left = 577
+        Height = 24
+        Top = 8
+        Width = 58
+        Alignment = taCenter
+        Caption = 'Senha'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'Poor Richard'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        Transparent = False
+      end
+    end
+  end
+  object RLPDFFilter1: TRLPDFFilter
+    DocumentInfo.Creator = 'FortesReport Community Edition v4.0.1.2 \251 Copyright © 1999-2021 Fortes Informática'
+    DisplayName = 'Documento PDF'
+    Left = 724
+    Top = 28
+  end
+  object RLXLSXFilter1: TRLXLSXFilter
+    DisplayName = 'Planilha Excel'
+    Left = 756
+    Top = 28
+  end
+  object RLHTMLFilter1: TRLHTMLFilter
+    DocumentStyle = dsCSS2
+    DisplayName = 'PÃ¡gina da Web'
+    Left = 788
+    Top = 28
+  end
+end

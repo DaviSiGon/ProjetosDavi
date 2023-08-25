@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="81" Y="13"/>
+        <UsageCount Value="126"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ulogin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLogin"/>
+        <TopLine Value="175"/>
+        <CursorPos X="49" Y="199"/>
+        <UsageCount Value="126"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ulobby.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormLobby"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLobby"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="499"/>
+        <CursorPos X="27" Y="517"/>
+        <UsageCount Value="126"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="urelatusuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRelatU"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uRelatUsuarios"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="30"/>
+        <CursorPos X="13" Y="48"/>
+        <UsageCount Value="74"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="urelatlivros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRelatLi"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uRelatLivros"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="60" Y="8"/>
+        <UsageCount Value="74"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="urelatbiblioteca.pas"/>
+        <ComponentName Value="FormRelatUsu"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uRelatUsuarios"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="27"/>
+        <CursorPos X="10" Y="51"/>
+        <UsageCount Value="42"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractRODataset.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3517"/>
+        <CursorPos Y="3528"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2947"/>
+        <CursorPos Y="2959"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\customcombobox.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="991"/>
+        <CursorPos X="27" Y="1004"/>
+        <UsageCount Value="1"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\dblookupcombobox.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="186"/>
+        <CursorPos X="29" Y="199"/>
+        <UsageCount Value="1"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcUtils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="400"/>
+        <CursorPos Y="412"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZSqlStrings.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="391"/>
+        <CursorPos Y="403"/>
+        <UsageCount Value="2"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1880"/>
+        <CursorPos Y="1892"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5422"/>
+        <CursorPos Y="5434"/>
+        <UsageCount Value="6"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\speedbutton.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="980"/>
+        <CursorPos Y="995"/>
+        <UsageCount Value="6"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="96"/>
+        <CursorPos Y="105"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2763"/>
+        <CursorPos Y="2776"/>
+        <UsageCount Value="6"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32object.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="402"/>
+        <CursorPos Y="414"/>
+        <UsageCount Value="6"/>
+      </Unit>
+      <Unit>
+        <Filename Value="urelatusuarios.lfm"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="16"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="urelatqtd.pas"/>
+        <ComponentName Value="FormQtdLi"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uRelatQtd"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="60"/>
+        <CursorPos X="15" Y="72"/>
+        <UsageCount Value="33"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="475" TopLine="461"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="476" TopLine="461"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="477" TopLine="461"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="478" TopLine="461"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="479" TopLine="461"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="480" TopLine="461"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="481" TopLine="461"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="483" TopLine="462"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="484" TopLine="463"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="485" TopLine="464"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="486" TopLine="465"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="488" TopLine="468"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="489" Column="19" TopLine="472"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="405" Column="29" TopLine="395"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="977" Column="32" TopLine="966"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="979" Column="33" TopLine="968"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="407" Column="31" TopLine="395"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="267" Column="33" TopLine="250"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="421" Column="28" TopLine="413"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="1103" Column="31" TopLine="1092"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="264" Column="32" TopLine="255"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="403" Column="3" TopLine="400"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="751" Column="23" TopLine="732"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="706" Column="3" TopLine="739"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="705" Column="3" TopLine="705"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="706" Column="3" TopLine="706"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="705" Column="3" TopLine="705"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="706" Column="3" TopLine="706"/>
+      </Position>
+      <Position>
+        <Filename Value="ulobby.pas"/>
+        <Caret Line="1102" Column="33" TopLine="1089"/>
+      </Position>
+      <Position>
+        <Filename Value="ulogin.pas"/>
+        <Caret Line="205" Column="49" TopLine="205"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ulobby.pas"/>
+        <Line Value="704"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ulobby.pas"/>
+        <Line Value="591"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="ulobby.pas"/>
+        <Line Value="474"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>
