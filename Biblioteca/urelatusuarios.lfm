@@ -12,7 +12,7 @@ object FormRelatU: TFormRelatU
     Hint = 'CONFIDENTIAL'
     Top = 0
     Width = 794
-    Color = 12308967
+    Color = 14079218
     DataSource = FormLobby.DataSourceUsuarios
     Font.Color = clBlack
     Font.Height = -13
@@ -33,7 +33,7 @@ object FormRelatU: TFormRelatU
       Borders.DrawTop = True
       Borders.DrawRight = True
       Borders.DrawBottom = True
-      Color = 9417162
+      Color = 11383266
       ParentColor = False
       Transparent = False
       object RLSystemInfo2: TRLSystemInfo
@@ -131,7 +131,7 @@ object FormRelatU: TFormRelatU
       Borders.DrawTop = True
       Borders.DrawRight = False
       Borders.DrawBottom = False
-      Color = 9417162
+      Color = 11383266
       ParentColor = False
       Transparent = False
       object RLSystemInfo1: TRLSystemInfo

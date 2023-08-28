@@ -6,7 +6,6 @@ object FormRelatU: TFormRelatU
   Caption = 'FormRelatUsu'
   ClientHeight = 450
   ClientWidth = 924
-  Color = clNone
   object RLReportU: TRLReport
     Left = 66
     Height = 1123

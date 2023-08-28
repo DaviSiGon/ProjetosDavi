@@ -672,7 +672,7 @@ object FormLobby: TFormLobby
             ParentFont = False
           end
           object lqtdLivros: TLabel
-            Left = 57
+            Left = 69
             Height = 24
             Top = 72
             Width = 79
@@ -2936,7 +2936,7 @@ object FormLobby: TFormLobby
             Top = 329
             Width = 85
             Caption = 'Editar'
-            Color = 12308967
+            Color = 14079218
             Flat = True
             Glyph.Data = {
               36040000424D3604000000000000360000002800000010000000100000000100

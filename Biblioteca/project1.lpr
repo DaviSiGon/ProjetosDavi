@@ -21,6 +21,7 @@ begin
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TFormLogin, FormLogin);
+  Application.CreateForm(TFormLobby, FormLobby);
   Application.Run;
 end.
 

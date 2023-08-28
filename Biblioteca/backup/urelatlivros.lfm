@@ -13,10 +13,10 @@ object FormRelatLi: TFormRelatLi
     Width = 794
     Borders.Sides = sdCustom
     Borders.DrawLeft = False
-    Borders.DrawTop = True
+    Borders.DrawTop = False
     Borders.DrawRight = False
-    Borders.DrawBottom = True
-    Color = 12308967
+    Borders.DrawBottom = False
+    Color = 14079218
     DataSource = FormLobby.DataSourceEmprestimo
     Font.Color = clBlack
     Font.Height = -13
@@ -25,7 +25,7 @@ object FormRelatLi: TFormRelatLi
     object RLBand1: TRLBand
       Left = 38
       Height = 66
-      Top = 39
+      Top = 38
       Width = 718
       BandType = btHeader
       Borders.Sides = sdCustom
@@ -122,7 +122,7 @@ object FormRelatLi: TFormRelatLi
     object RLBand2: TRLBand
       Left = 38
       Height = 38
-      Top = 105
+      Top = 104
       Width = 718
       BandType = btTitle
       Borders.Sides = sdCustom
@@ -220,7 +220,7 @@ object FormRelatLi: TFormRelatLi
     object RLGroup1: TRLGroup
       Left = 38
       Height = 133
-      Top = 143
+      Top = 142
       Width = 718
       Transparent = False
       object RLBand3: TRLBand
@@ -319,7 +319,7 @@ object FormRelatLi: TFormRelatLi
     object RLBand4: TRLBand
       Left = 38
       Height = 38
-      Top = 276
+      Top = 275
       Width = 718
       BandType = btSummary
       Borders.Sides = sdCustom
@@ -354,7 +354,7 @@ object FormRelatLi: TFormRelatLi
     object RLBand5: TRLBand
       Left = 38
       Height = 38
-      Top = 314
+      Top = 313
       Width = 718
       BandType = btFooter
       Borders.Sides = sdCustom

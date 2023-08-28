@@ -12,7 +12,7 @@ object FormQtdLi: TFormQtdLi
     Height = 1123
     Top = 0
     Width = 794
-    Color = 12308967
+    Color = 14079218
     DataSource = DataSourceLivros
     Font.Color = clBlack
     Font.Height = -13
@@ -38,7 +38,7 @@ object FormQtdLi: TFormQtdLi
       ParentFont = False
       Transparent = False
       object RLNome: TRLLabel
-        Left = 60
+        Left = 30
         Height = 24
         Top = 8
         Width = 56
@@ -55,7 +55,7 @@ object FormQtdLi: TFormQtdLi
         Transparent = False
       end
       object RLAut: TRLLabel
-        Left = 373
+        Left = 391
         Height = 24
         Top = 8
         Width = 56
@@ -89,7 +89,7 @@ object FormQtdLi: TFormQtdLi
         Transparent = False
       end
       object RLCat: TRLLabel
-        Left = 213
+        Left = 244
         Height = 24
         Top = 8
         Width = 94
@@ -151,7 +151,7 @@ object FormQtdLi: TFormQtdLi
       Borders.DrawTop = True
       Borders.DrawRight = True
       Borders.DrawBottom = True
-      Color = 9417162
+      Color = 11383266
       ParentColor = False
       Transparent = False
       object RLSystemInfo2: TRLSystemInfo
@@ -221,11 +221,11 @@ object FormQtdLi: TFormQtdLi
         Borders.DrawBottom = False
         Transparent = False
         object RLDBText2: TRLDBText
-          Left = 43
+          Left = 0
           Height = 18
           Top = 20
-          Width = 90
-          Alignment = taCenter
+          Width = 244
+          AutoSize = False
           DataField = 'Nome_Livro'
           DataSource = DataSourceLivros
           Font.CharSet = ANSI_CHARSET
@@ -255,7 +255,7 @@ object FormQtdLi: TFormQtdLi
           Transparent = False
         end
         object RLDBText6: TRLDBText
-          Left = 223
+          Left = 247
           Height = 18
           Top = 20
           Width = 74
@@ -272,7 +272,7 @@ object FormQtdLi: TFormQtdLi
           Transparent = False
         end
         object RLDBText3: TRLDBText
-          Left = 360
+          Left = 378
           Height = 18
           Top = 20
           Width = 92
@@ -401,7 +401,7 @@ object FormQtdLi: TFormQtdLi
       Borders.DrawTop = True
       Borders.DrawRight = False
       Borders.DrawBottom = False
-      Color = 9417162
+      Color = 11383266
       ParentColor = False
       Transparent = False
       object RLSystemInfo1: TRLSystemInfo

@@ -318,7 +318,6 @@ begin
   FormRelatLi:=TFormRelatLi.Create(Nil);
   FormRelatU:=TFormRelatU.Create(Nil);
 
-  edtPrecoLivro.NumbersOnly:=True;
   edtQtdLivro.NumbersOnly:=True;
 
 end;
@@ -342,7 +341,9 @@ procedure TFormLobby.RBQtdLiChange(Sender: TObject);
 begin
   CheckBoxOrdenar.Enabled:=True;
   StartDate.Enabled:=False;
+  StartDate.Date:=NullDate;
   EndDate.Enabled:=False;
+  EndDate.Date:=NullDate;
   btDefinirDataRelat.Enabled:=False;
 end;
 
@@ -357,8 +358,11 @@ end;
 procedure TFormLobby.RBRelatUsuChange(Sender: TObject);
 begin
   CheckBoxOrdenar.Enabled:=True;
+  CheckBoxOrdenar.Checked:=False;
   StartDate.Enabled:=False;
+  StartDate.Date:=NullDate;
   EndDate.Enabled:=False;
+  EndDate.Date:=NullDate;
   btDefinirDataRelat.Enabled:=False;
 end;
 
@@ -402,7 +406,7 @@ procedure TFormLobby.DBGridLivrosDblClick(Sender: TObject);
 begin
   edtIDLivro.Text:=ZQueryLivros.FieldByName('ID_Livro').AsString;
   edtNomeLivro.Text:=ZQueryLivros.FieldByName('Nome_Livro').AsString;
-  edtPrecoLivro.Text:=FormatFloat('#,##.00',(ZQueryLivros.FieldByName('Preco_Livro').AsFloat));
+  edtPrecoLivro.Text:=FormatFloat('#,##',(ZQueryLivros.FieldByName('Preco_Livro').AsFloat));
   DatePub.DateTime:=ZQueryLivros.FieldByName('Data_Pub').AsDateTime;
   cbxCategorias.KeyValue:=ZQueryLivros.FieldByName('ID_Categoria').AsInteger;
   cbxAutores.KeyValue:=ZQueryLivros.FieldByName('ID_Autor').AsInteger;
@@ -516,7 +520,7 @@ begin
     ZQueryAutores.SQL.Add('select * from Adm.tbl_autores');
     ZQueryAutores.Open;
 
-    ShowMessage('Adcionado com sucesso!');
+    ShowMessage('Adicionado com sucesso!');
 
   except
     on e:exception do
@@ -567,6 +571,18 @@ begin
   Abort;
   end
   else
+      ZQueryLivros.Close;
+      ZQueryLivros.SQL.Clear;
+      ZQueryLivros.SQL.Add('select count(*) from  Adm.tbl_livro inner join Adm.tbl_autores on Adm.tbl_livro.ID_Autor = tbl_autores.ID_Autor where Adm.tbl_livro.ID_Autor = tbl_autores.ID_Autor and tbl_livro.ID_Autor = ' + QuotedStr(edtIDAutor.Text));
+      ZQueryLivros.Open;
+
+      if ZQueryEmprestimo.Fields[0].AsInteger > 0 then
+    begin
+
+      ShowMessage('Não é possivel deletar autor relacionada a um livro da biblioteca!');
+      Abort;
+    end
+      else
    try
     ZQueryAutores.Close;
     ZQueryAutores.SQL.Clear;
@@ -579,6 +595,11 @@ begin
     ZQueryAutores.Open;
 
     ShowMessage('Removido com sucesso!');
+
+      ZQueryLivros.Close;
+      ZQueryLivros.SQL.Clear;
+      ZQueryLivros.SQL.Add('select A.*, B.*, C.* from Adm.tbl_livro A inner join Adm.tbl_autores B on A.ID_Autor = B.ID_Autor inner join Adm.tbl_categorias C on A.ID_Categoria = C.ID_Categoria where A.Qtd_Livro <> 0');
+      ZQueryLivros.Open;
 
   except
     on e:exception do
@@ -681,6 +702,18 @@ begin
   Abort;
   end
   else
+      ZQueryLivros.Close;
+      ZQueryLivros.SQL.Clear;
+      ZQueryLivros.SQL.Add('select count(*) from  Adm.tbl_livro inner join Adm.tbl_categorias on Adm.tbl_livro.ID_Categoria = tbl_categorias.ID_Categoria where Adm.tbl_livro.ID_Categoria = tbl_categorias.ID_Categoria and tbl_livro.ID_Categoria = ' + QuotedStr(edtIDCat.Text));
+      ZQueryLivros.Open;
+
+      if ZQueryEmprestimo.Fields[0].AsInteger > 0 then
+    begin
+
+      ShowMessage('Não é possivel deletar categoria relacionada a um livro da biblioteca!');
+      Abort;
+    end
+      else
    try
     ZQueryCategorias.Close;
     ZQueryCategorias.SQL.Clear;
@@ -693,6 +726,12 @@ begin
     ZQueryCategorias.Open;
 
     ShowMessage('Removido com sucesso!');
+
+      ZQueryLivros.Close;
+      ZQueryLivros.SQL.Clear;
+      ZQueryLivros.SQL.Add('select A.*, B.*, C.* from Adm.tbl_livro A inner join Adm.tbl_autores B on A.ID_Autor = B.ID_Autor inner join Adm.tbl_categorias C on A.ID_Categoria = C.ID_Categoria where A.Qtd_Livro <> 0');
+      ZQueryLivros.Open;
+
   except
     on e:exception do
     begin
@@ -738,7 +777,7 @@ begin
     ZQueryLivros.SQL.Add('values');
     ZQueryLivros.SQL.Add('(:ANome, :APreco, :ACat, :AAutor, :APub, :AQtd)');
     ZQueryLivros.ParamByName('ANome').AsString:=edtNomeLivro.Text;
-    ZQueryLivros.ParamByName('APreco').AsFloat:=StrToFloat(edtPrecoLivro.Text);
+    ZQueryLivros.ParamByName('APreco').AsFloat:=StrToFloatDef(edtPrecoLivro.Text, 0);
     ZQueryLivros.ParamByName('ACat').AsInteger:=cbxCategorias.KeyValue;
     ZQueryLivros.ParamByName('AAutor').AsInteger:=cbxAutores.KeyValue;
     ZQueryLivros.ParamByName('APub').AsDate:=DatePub.Date;
@@ -752,6 +791,7 @@ begin
 
       if not ZQueryLivros.EOF then
       lqtdLivros.Caption:=IntToStr(ZQueryLivros.RecordCount);
+
 
       ShowMessage('Livro adcionado com sucesso!');
 
@@ -851,7 +891,22 @@ end;
 procedure TFormLobby.btRemoveLivroClick(Sender: TObject);
 begin
   if edtIDLivro.Text = '' then
-  ShowMessage('Nenhum Livro Selecionado!')
+  begin
+  ShowMessage('Nenhum Livro Selecionado!');
+  Abort;
+  end
+  else
+      ZQueryEmprestimo.Close;
+      ZQueryEmprestimo.SQL.Clear;
+      ZQueryEmprestimo.SQL.Add('select count(*) from  Adm.tbl_emprestimos inner join Adm.tbl_livro on Adm.tbl_emprestimos.ID_Livro = tbl_livro.ID_Livro where Adm.tbl_emprestimos.ID_Livro = tbl_livro.ID_Livro and tbl_livro.ID_livro = ' + QuotedStr(edtIDLivro.Text));
+      ZQueryEmprestimo.Open;
+
+      if ZQueryEmprestimo.Fields[0].AsInteger > 0 then
+    begin
+
+      ShowMessage('Não é possivel deletar livros emprestados!');
+      Abort;
+    end
   else
   try
     ZQueryLivros.Close;
@@ -868,6 +923,14 @@ begin
       lqtdLivros.Caption:=IntToStr(ZQueryLivros.RecordCount);
 
       ShowMessage('Livro removido com sucesso!');
+
+      if not ZQueryLivros.EOF then
+      lqtdLivros.Caption:=IntToStr(ZQueryLivros.RecordCount);
+
+      ZQueryEmprestimo.Close;
+      ZQueryEmprestimo.SQL.Clear;
+      ZQueryEmprestimo.SQL.Add('select A.*, L.*, U.* from Adm.tbl_emprestimos A inner join Adm.tbl_livro L on A.ID_Livro = L.ID_Livro inner join Adm.tbl_usuarios U on A.ID_Usuario = U.ID_Usuario');
+      ZQueryEmprestimo.Open;
 
       edtNomeLivro.Clear;
       DatePub.Date:=00/00/0000;
@@ -949,7 +1012,20 @@ begin
         ShowMessage('Nenhum livro selecionado!');
         Abort;
       end
-    else if edtIDLivro.Text <> '' then
+    else
+
+         ZQueryEmprestimo.Close;
+         ZQueryEmprestimo.SQL.Clear;
+         ZQueryEmprestimo.SQL.Add('select count(*) as QtdL from  Adm.tbl_emprestimos inner join Adm.tbl_usuarios on Adm.tbl_emprestimos.ID_Usuario = tbl_usuarios.ID_Usuario where Adm.tbl_emprestimos.ID_Usuario = tbl_usuarios.ID_Usuario and tbl_emprestimos.ID_Usuario = ' + QuotedStr(edtIDUsuario.Text));
+         ZQueryEmprestimo.Open;
+
+         if ZQueryEmprestimo.FieldByName('QtdL').AsInteger > 3 then
+       begin
+         ShowMessage('Maximo de emprestimos realizados!' + #13 + 'Devolva algum livro para pegar outro!');
+         Abort;
+       end
+     else
+    if edtIDLivro.Text <> '' then
   try
     begin
     ZQueryEmprestimo.Close;
@@ -980,14 +1056,14 @@ begin
     ZQueryEmprestimo.SQL.Add('select * from Adm.tbl_emprestimos');
     ZQueryEmprestimo.Open;
 
+    if not ZQueryLivros.EOF then
+    lqtdLivros.Caption:=IntToStr(ZQueryLivros.RecordCount);
+
     ShowMessage('Emprestimo realizado!');
 
     btEmprestimo.Visible:=False;
     btEmprestimo1.Visible:=False;
     btEmprestimo2.Visible:=False;
-
-    if not ZQueryLivros.EOF then
-    lqtdLivros.Caption:=IntToStr(ZQueryLivros.RecordCount);
 
   except
     on e:exception do
@@ -1057,7 +1133,6 @@ begin
     else if  CheckBoxOrdenar.Checked = True then
       begin
         FormQtdLi.RLGroup1.DataFields:='Categoria';
-        //FormQtdLi.RLDBText5.DataField:='Categoria';
         FormQtdLi.RLBand6.Visible:=True;
         FormQtdLi.ZQueryLivros.SortedFields:='Categoria';
         FormQtdLi.RLReportQtd.Preview()
@@ -1075,10 +1150,12 @@ begin
       ShowMessage('Nenhum livro selecionado!');
       Abort;
     end
-    else if edtIDEmprestimo.Text <> '' then
-    try
-    begin
+    else
 
+    if DateDevolucao.Date > ZQueryEmprestimo.FieldByName('Data_Devolucao').AsDateTime then
+    begin
+    if MessageDlg('Deseja devolver um livro atrasado?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    begin
     ZQueryEmprestimo.Close;
     ZQueryEmprestimo.SQL.Clear;
     ZQueryEmprestimo.SQL.Add('delete from Adm.tbl_emprestimos where ID_Emprestimo = ' + edtIDEmprestimo.Text);
@@ -1089,13 +1166,29 @@ begin
     ZQueryEmprestimo.SQL.Add('update Adm.tbl_livro set Qtd_Livro = (Qtd_Livro + 1) where ID_Livro = (:ALivro) ');
     ZQueryEmprestimo.ParamByName('ALivro').AsInteger:=StrToInt(edtIDLivroE.Text);
     ZQueryEmprestimo.ExecSQL;
+    end
+    else
+    Abort;
+    end
+    else
+    begin
+    ZQueryEmprestimo.Close;
+    ZQueryEmprestimo.SQL.Clear;
+    ZQueryEmprestimo.SQL.Add('delete from Adm.tbl_emprestimos where ID_Emprestimo = ' + edtIDEmprestimo.Text);
+    ZQueryEmprestimo.ExecSQL;
 
+    ZQueryEmprestimo.Close;
+    ZQueryEmprestimo.SQL.Clear;
+    ZQueryEmprestimo.SQL.Add('update Adm.tbl_livro set Qtd_Livro = (Qtd_Livro + 1) where ID_Livro = (:ALivro) ');
+    ZQueryEmprestimo.ParamByName('ALivro').AsInteger:=StrToInt(edtIDLivroE.Text);
+    ZQueryEmprestimo.ExecSQL;
     end;
 
     ZQueryLivros.Close;
     ZQueryLivros.SQL.Clear;
     ZQueryLivros.SQL.Add('select A.*, B.*, C.* from Adm.tbl_livro A inner join Adm.tbl_autores B on A.ID_Autor = B.ID_Autor inner join Adm.tbl_categorias C on A.ID_Categoria = C.ID_Categoria where A.Qtd_Livro <> 0');
     ZQueryLivros.Open;
+
     ZQueryEmprestimo.Close;
     ZQueryEmprestimo.SQL.Clear;
     ZQueryEmprestimo.SQL.Add('select A.*, L.*, U.* from Adm.tbl_emprestimos A inner join Adm.tbl_livro L on A.ID_Livro = L.ID_Livro inner join Adm.tbl_usuarios U on A.ID_Usuario = U.ID_Usuario where A.ID_Usuario = ' + edtIDUsuario.Text);
@@ -1103,27 +1196,41 @@ begin
 
     btDevolucao.Visible:=False;
 
+    if not ZQueryLivros.EOF then
+    lqtdLivros.Caption:=IntToStr(ZQueryLivros.RecordCount);
+
     ShowMessage('Devolução realizada!');
-  except
-    on e:exception do
-    begin
-      ShowMessage('Ocorreu um erro: '+ e.Message);
     end;
-  end;
-  end;
 
 procedure TFormLobby.btRemoveUsuarioClick(Sender: TObject);
 begin
+    ZQueryUsuarios.Close;
+    ZQueryUsuarios.SQL.Clear;
+    ZQueryUsuarios.SQL.Add('select * from Adm.tbl_usuarios');
+    ZQueryUsuarios.Open;
+
   if edtIDUsuarioGerenciamento.Text = '' then
   begin
   ShowMessage('Nenhum usuario selecionado!');
   Abort;
   end
   else
+      ZQueryEmprestimo.Close;
+      ZQueryEmprestimo.SQL.Clear;
+      ZQueryEmprestimo.SQL.Add('select count(*) from  Adm.tbl_emprestimos inner join Adm.tbl_usuarios on Adm.tbl_emprestimos.ID_Usuario = tbl_usuarios.ID_Usuario where Adm.tbl_emprestimos.ID_Usuario = tbl_usuarios.ID_Usuario and tbl_emprestimos.ID_Usuario = ' + QuotedStr(edtIDUsuarioGerenciamento.Text));
+      ZQueryEmprestimo.Open;
+
+      if ZQueryEmprestimo.Fields[0].AsInteger > 0 then
+    begin
+
+      ShowMessage('Não é possivel deletar usuarios pendentes!');
+      Abort;
+    end
+  else
     try
     ZQueryUsuarios.Close;
     ZQueryUsuarios.SQL.Clear;
-    ZQueryUsuarios.SQL.Add('delete from Adm.tbl_usuarios where ID_Usuario = ' + edtIDUsuario.Text);
+    ZQueryUsuarios.SQL.Add('delete from Adm.tbl_usuarios where ID_Usuario = ' + edtIDUsuarioGerenciamento.Text);
     ZQueryUsuarios.ExecSQL;
 
     ShowMessage('Usuario excluido!');
@@ -1133,10 +1240,10 @@ begin
     ZQueryUsuarios.SQL.Add('select * from Adm.tbl_usuarios');
     ZQueryUsuarios.Open;
 
-    ZQueryUsuarios.Close;
-    ZQueryUsuarios.SQL.Clear;
-    ZQueryUsuarios.SQL.Add('select * from Adm.tbl_usuarios');
-    ZQueryUsuarios.Open;
+    ZQueryEmprestimo.Close;
+    ZQueryEmprestimo.SQL.Clear;
+    ZQueryEmprestimo.SQL.Add('select A.*, L.*, U.* from Adm.tbl_emprestimos A inner join Adm.tbl_livro L on A.ID_Livro = L.ID_Livro inner join Adm.tbl_usuarios U on A.ID_Usuario = U.ID_Usuario');
+    ZQueryEmprestimo.Open;
 
   except
     on e:exception do
